@@ -13,11 +13,13 @@ def fileExist(filename,path=os.curdir):
     else:
         return False
 def badHint():
-    print('Command listed below is required: newProject, run or newModule.')
-    print('Examples:')
-    print('evental newProject HelloWorld')
-    print('evental run')
-    print('evental newModule AModule')
+    print('Usage: evental COMMAND')
+    print('List of Commands:')
+    print('version                    to show the version of PyEvental version.')
+    print('run [directory]            to run an PyEvental project.')
+    print('newProject                 to start a new project in the current working directory.')
+    print('newModule [module name]    to create a new module in the current working directory.')
+    print('rmMoudle [module name]     to remove a existing module in the current working directory.')
     os._exit(0)
 argv = sys.argv
 argc = len(sys.argv)

@@ -1,0 +1,8 @@
+!main():
+	print('HelloWorld')
+	echo()
+	echo()
+!echo():
+	print('1')
+@echo:
+	print(2)
