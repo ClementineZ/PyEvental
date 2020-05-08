@@ -12,21 +12,25 @@ def fileExist(filename,path=os.curdir):
         return True
     else:
         return False
-def badHint():
+def helpHint():
     print('Usage: evental COMMAND')
+    print()
     print('List of Commands:')
-    print('version                    to show the version of PyEvental version.')
-    print('run [directory]            to run an PyEvental project.')
-    print('newProject                 to start a new project in the current working directory.')
-    print('newModule [module name]    to create a new module in the current working directory.')
-    print('rmMoudle [module name]     to remove a existing module in the current working directory.')
+    print('    version                    to show the version of PyEvental version.')
+    print('    run [directory]            to run an PyEvental project.')
+    print('    newProject [project name]  to create a new project in the current working directory.')
+    print('    newModule [module name]    to create a new module in the current working directory.')
+    print('    rmMoudle [module name]     to remove a existing module in the current working directory.')
     os._exit(0)
 argv = sys.argv
 argc = len(sys.argv)
 if argc == 1 or (argc == 2 and (argv[1]=='-h' or argv[1]=='--help')):
-    badHint()
+    helpHint()
 if argc == 2:
     command = argv[1]
+    if command == 'version':
+        print('PyEvental Version 0.1, developed by ClementineZ.')
+        os._exit(0)
     if command == 'run':
         if not fileExist('.evental'):
             print('Evental Error: This is not a evental project diretory. File \'.evental\' is required.')
@@ -51,7 +55,7 @@ if argc == 2:
             print('Evental Error: Command '+command+' need a name')
             os._exit(0)
         else:
-            badHint()
+            helpHint()
 if argc == 3:
     command = argv[1]
     name = argv[2]
@@ -76,5 +80,5 @@ if argc == 3:
                     fs = open(name,'w')
                     fs.close()
     else:
-        badHint()
+        helpHint()
         os._exit(0)

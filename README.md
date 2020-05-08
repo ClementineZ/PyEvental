@@ -13,5 +13,5 @@ You can see the code examples for details.
 ‘À––£∫
 Run:
 
-$ cd ./examples/HelloWorld
+$ cd ./examples
 $ evental run
